@@ -5,6 +5,22 @@ public abstract class Cake {
     protected String name;
     protected double rate;
 
+    public double getRate() {
+        return rate;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
     public Cake (String name, double rate) {
         this.name = name;
         this.rate = rate;
