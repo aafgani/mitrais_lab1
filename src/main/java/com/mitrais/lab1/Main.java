@@ -17,13 +17,14 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("This is my Main class");
+        List<Cake> cakeList, typesofCake;
+        Cake[] cakes;
+
+        /*Scanner s =  new Scanner(System.in);
+        cakes = new Cake[nCake];
         String name;
         Double rate, weight, quantity;
         int nCake=4;
-        Cake[] cakes = new Cake[nCake];
-        List<Cake> cakeList, typesofCake;
-
-        /*Scanner s =  new Scanner(System.in);
         for (int i=0;i<cakes.length;i++){
             System.out.println(String.format("Cake %d ", i+1));
             System.out.print("Input Name : ");
@@ -49,25 +50,38 @@ public class Main {
                 new OrderCake("A",12, 9.0),
                 new OrderCake("B",10, 8.0),
                 new OrderCake("C",15, 7.0),
-                new ReadyMadeCake("D",9, 9.0),
-                new ReadyMadeCake("E",13, 9.0),
-                new ReadyMadeCake("F",14, 8.0)
+                new OrderCake("D",14, 7.0),
+                new OrderCake("E",17, 6.0),
+                new OrderCake("F",19, 4.0),
+                new OrderCake("G",11, 9.0),
+                new OrderCake("H",14, 5.0),
+                new OrderCake("I",12, 8.0),
+                new OrderCake("J",16, 6.0),
+                new ReadyMadeCake("K",9, 9.0),
+                new ReadyMadeCake("L",13, 9.0),
+                new ReadyMadeCake("M",17, 4.0),
+                new ReadyMadeCake("N",12, 7.0),
+                new ReadyMadeCake("O",18, 4.0),
+                new ReadyMadeCake("P",14, 8.0),
+                new ReadyMadeCake("Q",16, 6.0),
+                new ReadyMadeCake("R",13, 8.0),
+                new ReadyMadeCake("S",19, 4.0),
+                new ReadyMadeCake("T",14, 8.0)
         };
 
-        System.out.println("List of Cakes");
         cakeList = Arrays.asList(cakes);
 
         //sort by calc prize
         cakeList.sort(Comparator.comparingDouble(c-> c.calcPrice()));
         displayAllCakes("All Cakes",cakeList);
-        System.out.println(String.format("The highest price is Cake %s - %f", cakeList.get(cakeList.size()-1).getName(), cakeList.get(cakeList.size()-1).calcPrice()));
+        System.out.println(String.format("The highest price is Cake %s = %f", cakeList.get(cakeList.size()-1).getName(), cakeList.get(cakeList.size()-1).calcPrice()));
 
 
         typesofCake= CakePredicate.filterCakes(cakeList, CakePredicate.isOrderCake());
         displayAllCakes("Order Cake",typesofCake);
 
         typesofCake = CakePredicate.filterCakes(cakeList, CakePredicate.isReadyMakeCake());
-        displayAllCakes("Read Make Cake",typesofCake);
+        displayAllCakes("Ready Make Cake",typesofCake);
     }
 
     private static void displayAllCakes(String title, List<Cake> cakes) {
